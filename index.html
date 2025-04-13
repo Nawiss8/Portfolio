@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Portfolio Nawiss Makaya</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  
+  <!-- Style pour le menu responsive -->
+  <style>
+    .mobile-nav-toggle {
+      display: none;
+    }
+    
+    @media (max-width: 1200px) {
+      .navmenu ul {
+        display: none;
+      }
+      
+      .mobile-nav-toggle {
+        display: block;
+        position: absolute;
+        right: 15px;
+        top: 20px;
+        z-index: 9998;
+        border: 0;
+        background: none;
+        font-size: 24px;
+        transition: all 0.4s;
+        outline: none !important;
+        line-height: 1;
+        cursor: pointer;
+        text-align: right;
+      }
+      
+      .navmenu-mobile {
+        position: fixed;
+        overflow: hidden;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.9);
+        transition: 0.3s;
+        z-index: 9997;
+        padding-top: 70px;
+      }
+      
+      .navmenu-mobile ul {
+        display: block !important;
+        position: absolute;
+        top: 55px;
+        right: 15px;
+        bottom: 15px;
+        left: 15px;
+        padding: 10px 0;
+        background-color: #fff;
+        overflow-y: auto;
+        transition: 0.3s;
+      }
+      
+      .navmenu-mobile li {
+        padding: 0;
+      }
+      
+      .navmenu-mobile a {
+        padding: 10px 20px;
+        font-size: 15px;
+        color: #333;
+      }
+      
+      .navmenu-mobile a:hover {
+        color: #fff;
+        background: #0078ff;
+      }
+      
+      .mobile-nav-active .mobile-nav-toggle {
+        color: #fff;
+      }
+    }
+  </style>
+</head>
+
+<body class="index-page">
+  <header id="header" class="header d-flex align-items-center light-background sticky-top">
+    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <h1 class="sitename">Nawiss</h1>
+      </a>
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html" class="active">Menu</a></li>
+          <li class="dropdown"><a href="#"><span>BTS SIO</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="btssio.html">BTS SIO ? c'est quoi ?</a></li>
+              <li><a href="veille.html">Veille Technologique</a></li>
+              <li><a href="patrimoine.html">Patrimoine Informatique</a></li>
+              <li><a href="epreuves.html">Les Epreuves</a></li>
+              <li><a href="#"></a></li>
+            </ul>
+          </li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="projets.html">Projets</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-social-links">
+    
+      </div>
+      <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+    </div>
+  </header>
+
+  <!-- Script pour le menu responsive -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+      const navmenu = document.querySelector('#navmenu');
+      
+      mobileNavToggle.addEventListener('click', function(e) {
+        document.body.classList.toggle('mobile-nav-active');
+        this.classList.toggle('bi-list');
+        this.classList.toggle('bi-x');
+        navmenu.classList.toggle('navmenu-mobile');
+      });
+      
+      // Fermer le menu quand on clique sur un lien
+      document.querySelectorAll('#navmenu a').forEach(navLink => {
+        navLink.addEventListener('click', () => {
+          if (document.body.classList.contains('mobile-nav-active')) {
+            document.body.classList.remove('mobile-nav-active');
+            mobileNavToggle.classList.toggle('bi-list');
+            mobileNavToggle.classList.toggle('bi-x');
+            navmenu.classList.toggle('navmenu-mobile');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- [Tout le contenu existant du head reste inchangé] -->
+  <!-- ... -->
+
+  <!-- Nouveau CSS pour la section Hero -->
+  <style>
+    /* Style global pour la section Hero */
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+    }
+
+    .hero img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.15;
+      z-index: 1;
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 20px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8), 0 4px 8px rgba(0, 0, 0, 0.6); /* Ombre noire renforcée */
+      animation: textGlow 2s ease-in-out infinite alternate;
+    }
+
+    .hero p {
+      font-size: 1.5rem;
+      color: white;
+      margin-bottom: 40px;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8), 0 3px 5px rgba(0, 0, 0, 0.6); /* Ombre noire renforcée */
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn-get-started,
+    .btn-synthesis {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .btn-get-started,
+    .btn-synthesis {
+      background: #e74c3c;
+      color: white;
+      box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+      border: none; /* Suppression de la bordure */
+    }
+
+    .btn-get-started:hover,
+    .btn-synthesis:hover {
+      transform: translateY(-5px);
+      background: #c0392b;
+      box-shadow: 0 10px 25px rgba(231, 76, 60, 0.6);
+    }
+
+    /* Effet de vague animé */
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="white"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="white"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="white"/></svg>');
+      background-size: cover;
+      background-repeat: no-repeat;
+      z-index: 2;
+      animation: waveAnimation 15s linear infinite;
+    }
+
+    /* Animation du texte */
+    @keyframes textGlow {
+      from {
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.6);
+      }
+      to {
+        text-shadow: 0 0 20px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 0, 0, 0.6);
+      }
+    }
+
+    /* Animation de la vague */
+    @keyframes waveAnimation {
+      0% {
+        background-position-x: 0;
+      }
+      100% {
+        background-position-x: 1200px;
+      }
+    }
+
+    /* Particules animées */
+    .particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .particle {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 50%;
+      animation: floatParticle linear infinite;
+    }
+
+    @keyframes floatParticle {
+      0% {
+        transform: translateY(0) translateX(0);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-1000px) translateX(200px);
+        opacity: 0;
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 2.5rem;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .btn-get-started,
+      .btn-synthesis {
+        width: 100%;
+        max-width: 250px;
+      }
+    }
+  </style>
+</head>
+
+<body class="index-page">
+  <!-- [Tout le contenu existant jusqu'à la section Hero reste inchangé] -->
+  <!-- ... -->
+
+  <!-- Section Hero améliorée -->
+  <main class="main">
+    <!-- Hero Section -->
+    <section id="hero" class="hero section">
+      <!-- Effet de particules -->
+      <div class="particles" id="particles"></div>
+      
+      <img src="assets/img/hero-bg.png" alt="" data-aos="fade-in">
+      <div class="container text-center" data-aos="zoom-out" data-aos-delay="100">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <h2>Bienvenue sur mon Portfolio</h2>
+            <p>Développeur Web Passionné</p>
+            <div class="hero-buttons">
+              <a href="assets/cv/cv nawiss 2025.pdf" download class="btn-get-started">
+                <i class="bi bi-download"></i> Mon CV
+              </a>
+              <a href="assets/tds/Tableau Competences Nawiss .pdf" target="_blank" class="btn-synthesis">
+                <i class="bi bi-table"></i> Tableau de Synthèse
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Hero Section -->
+  </main>
+
+  <!-- [Tout le reste de votre code reste inchangé] -->
+  <!-- ... -->
+
+  <!-- Script pour les particules -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const particlesContainer = document.getElementById('particles');
+      const particleCount = 30;
+      
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        
+        // Position aléatoire
+        const posX = Math.random() * 100;
+        const posY = Math.random() * 100 + 100;
+        
+        // Taille aléatoire
+        const size = Math.random() * 5 + 2;
+        
+        // Durée d'animation aléatoire
+        const duration = Math.random() * 15 + 10;
+        const delay = Math.random() * -20;
+        
+        particle.style.left = `${posX}%`;
+        particle.style.top = `${posY}%`;
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        particle.style.animationDuration = `${duration}s`;
+        particle.style.animationDelay = `${delay}s`;
+        
+        particlesContainer.appendChild(particle);
+      }
+    });
+  </script>
+</body>
+</html><br><br><br>
+
+<!-- Skills Section -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- [Tout le contenu existant du head reste inchangé] -->
+  <!-- ... -->
+
+  <!-- Nouveau CSS pour la section Compétences -->
+  <style>
+    /* Style global pour la section Compétences */
+    .skills-section {
+      padding: 60px 0;
+      background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+    }
+
+    .skills-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Grille de compétences responsive */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 20px;
+      justify-items: center;
+      padding: 20px;
+    }
+
+    /* Carte de compétence */
+    .skill-card {
+      width: 100%;
+      max-width: 150px;
+      height: 150px;
+      background-size: cover;
+      background-position: center;
+      background-image: var(--img);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      position: relative;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .skill-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+      opacity: 0.7;
+      transition: opacity 0.3s ease;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .skill-card:hover::before {
+      opacity: 0.9;
+    }
+
+    .skill-name {
+      position: relative;
+      color: white;
+      font-size: 1rem;
+      font-weight: bold;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+      margin-bottom: 15px;
+      z-index: 2;
+      transition: all 0.3s ease;
+    }
+
+    .skill-card:hover .skill-name {
+      margin-bottom: 25px;
+      font-size: 1.1rem;
+    }
+
+    /* Effet de zoom au survol */
+    .skill-card:hover {
+      background-size: 110%;
+    }
+
+    /* Animation subtile */
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    .skill-card {
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .skill-card:nth-child(2) { animation-delay: 0.2s; }
+    .skill-card:nth-child(3) { animation-delay: 0.4s; }
+    .skill-card:nth-child(4) { animation-delay: 0.6s; }
+    .skill-card:nth-child(5) { animation-delay: 0.8s; }
+    .skill-card:nth-child(6) { animation-delay: 1s; }
+    .skill-card:nth-child(7) { animation-delay: 1.2s; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 15px;
+      }
+
+      .skill-card {
+        height: 120px;
+        max-width: 120px;
+      }
+
+      .skill-name {
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+
+<body class="index-page">
+  <!-- [Tout le contenu existant jusqu'à la section Compétences reste inchangé] -->
+  <!-- ... -->
+
+  <!-- Section Compétences -->
+  <section class="skills-section">
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Compétences</h2>
+      <p>Mes principales compétences techniques</p>
+    </div>
+
+    <div class="skills-container">
+      <div class="skills-grid">
+        <!-- Compétence CSS -->
+        <div class="skill-card" style="--img: url(https://i0.wp.com/css-tricks.com/wp-content/uploads/2024/10/css3-logo.jpg?resize=1200%2C600&ssl=1);">
+          <span class="skill-name">CSS</span>
+        </div>
+
+        <!-- Compétence HTML -->
+        <div class="skill-card" style="--img: url(https://img.freepik.com/vecteurs-premium/code-script-fichier-isometrique-vecteur-signe-html_744112-547.jpg?semt=ais_hybrid);">
+          <span class="skill-name">HTML</span>
+        </div>
+
+        <!-- Compétence Kotlin -->
+        <div class="skill-card" style="--img: url(https://storage.yandexcloud.net/plp-media-97af8aaaa1/CACHE/images/cover/fbc29d40e4b4e5d1ed240041eaba1e86fd3242a1/a96253e8b727dcfc29fe8ca36ab88c8a.png);">
+          <span class="skill-name">Kotlin</span>
+        </div>
+
+        <!-- Compétence PHP -->
+        <div class="skill-card" style="--img: url(https://img.freepik.com/premium-vector/isometric-file-script-code-with-php-sign-vector_744112-549.jpg);">
+          <span class="skill-name">PHP</span>
+        </div>
+
+        <!-- Compétence JavaScript -->
+        <div class="skill-card" style="--img: url(https://img.freepik.com/premium-vector/isometric-file-script-code-with-js-sign-vector_744112-548.jpg?w=360);">
+          <span class="skill-name">JavaScript</span>
+        </div>
+
+        <!-- Compétence Laravel -->
+        <div class="skill-card" style="--img: url(https://www.pinchaaqui.es/app/uploads/2024/10/Laravel-scaled.jpeg);">
+          <span class="skill-name">Laravel</span>
+        </div>
+
+        <!-- Compétence XML -->
+        <div class="skill-card" style="--img: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0M2M_ZjnoVjBkiarzB2HzJG7fKND6DtSMDXgn4Cc1NBBak1Dj_G89xRmlQ2w8xbbF758&usqp=CAU);">
+          <span class="skill-name">XML</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- [Tout le reste de votre code reste inchangé] -->
+  <!-- ... -->
+
+  <!-- Scripts existants -->
+  <!-- ... -->
+</body>
+</html>
+
+
+  <!-- footer -->
+  <footer id="footer" class="footer light-background">
+    <div class="container">
+      <div class="copyright text-center ">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">Nawiss</strong> <span>All Rights Reserved<br></span></p>
+      </div>
+      <div class="social-links d-flex justify-content-center">
+       
+        <a href="https://www.linkedin.com/in/nawiss-makaya-37119a230/"><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/js/main.js"></script>
+
+
+
+
+
+
+  <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- [Tout le contenu existant du head reste inchangé] -->
+  <!-- ... -->
+
+  <!-- Nouveau CSS pour la section Parcours -->
+  <style>
+    /* Style global pour la section Parcours */
+    .resume-section {
+      padding: 80px 0;
+      background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .resume-section::before {
+      content: "";
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(52, 152, 219, 0.1) 0%, rgba(52, 152, 219, 0) 70%);
+      z-index: 0;
+    }
+
+    .resume-section::after {
+      content: "";
+      position: absolute;
+      bottom: -100px;
+      left: -100px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(231, 76, 60, 0.1) 0%, rgba(231, 76, 60, 0) 70%);
+      z-index: 0;
+    }
+
+    /* Timeline stylisée */
+    .resume-container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .resume-row {
+      position: relative;
+    }
+
+    .resume-row::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 3px;
+      background: linear-gradient(to bottom, #3498db, #e74c3c);
+      transform: translateX(-50%);
+      z-index: 0;
+    }
+
+    .resume-title {
+      font-size: 1.8rem;
+      color: #2c3e50;
+      margin-bottom: 30px;
+      position: relative;
+      display: inline-block;
+      padding-left: 15px;
+    }
+
+    .resume-title::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 80%;
+      width: 5px;
+      background: #3498db;
+      border-radius: 3px;
+    }
+
+    /* Items de parcours */
+    .resume-item {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      z-index: 1;
+    }
+
+    .resume-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(52, 152, 219, 0.03) 0%, rgba(231, 76, 60, 0.03) 100%);
+      z-index: -1;
+    }
+
+    .resume-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    }
+
+    .resume-item h4 {
+      font-size: 1.3rem;
+      color: #3498db;
+      margin-bottom: 10px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .resume-item h4::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: #e74c3c;
+      border-radius: 3px;
+      transition: width 0.3s ease;
+    }
+
+    .resume-item:hover h4::after {
+      width: 100px;
+    }
+
+    .resume-item h5 {
+      font-size: 1rem;
+      color: #7f8c8d;
+      margin-bottom: 15px;
+    }
+
+    .resume-item p em {
+      color: #3498db;
+      font-style: normal;
+      font-weight: 500;
+    }
+
+    .resume-item ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .resume-item ul li {
+      position: relative;
+      padding-left: 25px;
+      margin-bottom: 10px;
+      color: #2c3e50;
+      transition: all 0.3s ease;
+    }
+
+    .resume-item ul li::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: #e74c3c;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .resume-item:hover ul li {
+      transform: translateX(5px);
+    }
+
+    /* Points de timeline */
+    .resume-item::after {
+      content: '';
+      position: absolute;
+      top: 40px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #3498db;
+      border: 4px solid white;
+      box-shadow: 0 0 0 3px #3498db;
+      z-index: 2;
+      transition: all 0.3s ease;
+    }
+
+    .col-lg-6:nth-child(1) .resume-item::after {
+      right: -10px;
+    }
+
+    .col-lg-6:nth-child(2) .resume-item::after {
+      left: -10px;
+    }
+
+    .resume-item:hover::after {
+      transform: scale(1.2);
+      background: #e74c3c;
+      box-shadow: 0 0 0 3px #e74c3c;
+    }
+
+    /* Animation automatique */
+    @keyframes floatItem {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .resume-item {
+      animation: floatItem 6s ease-in-out infinite;
+    }
+
+    .resume-item:nth-child(1) { animation-delay: 0s; }
+    .resume-item:nth-child(2) { animation-delay: 1s; }
+    .resume-item:nth-child(3) { animation-delay: 2s; }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .resume-row::before {
+        left: 30px;
+      }
+
+      .col-lg-6 {
+        padding-left: 50px;
+      }
+
+      .col-lg-6:nth-child(1) .resume-item::after,
+      .col-lg-6:nth-child(2) .resume-item::after {
+        left: -10px;
+        right: auto;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .resume-section {
+        padding: 60px 0;
+      }
+
+      .resume-item {
+        padding: 20px;
+      }
+
+      .resume-title {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body class="index-page">
+  <!-- [Tout le contenu existant jusqu'à la section Parcours reste inchangé] -->
+  <!-- ... -->
+
+  <!-- Section Parcours améliorée -->
+  <section id="resume" class="resume section resume-section">
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Parcours</h2>
+      <p>Découvrez mon parcours professionnel et académique</p>
+    </div>
+
+    <div class="container resume-container">
+      <div class="row resume-row">
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+          <h3 class="resume-title">BTS SIO</h3>
+
+          <div class="resume-item pb-0">
+            <h4>2023 - 2025</h4>
+            <h5>Formation en informatique : BTS SIO</h5>
+            <p><em>Campus CSND, Villefranche-sur-Saône, </em></p>
+            <ul>
+              <li>Option SLAM (Solutions Logicielles et Applications Métiers)</li>
+              
+              <li>Cursus de 2 ans avec stages en entreprise</li>
+              <li>Développement d'applications et gestion de parc informatique</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+          <h3 class="resume-title">Bac Technologique</h3>
+          <div class="resume-item">
+            <h4>2021</h4>
+            <h5>2019 - 2021</h5>
+            <p><em>Lycée Colbert, Lyon 8</em></p>
+            <ul>
+              <li>Baccalauréat STMG (Sciences et Technologies du Management et de la Gestion)</li>
+              <li>Spécialité Systèmes d'Information de Gestion</li>
+              <li>Programmation HTML/CSS</li>
+              <li>Projets de gestion en équipe</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- [Tout le reste de votre code reste inchangé] -->
+  <!-- ... -->
+
+  <!-- Scripts existants -->
+  <!-- ... -->
+</body>
+</html>
+</body>
+
+
+
+
+
+  
+ 
+
+
+</html>

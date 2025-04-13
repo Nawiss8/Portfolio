@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>BTS SIO 2025 - Épreuves</title>
+  <meta name="description" content="Détail des épreuves du BTS SIO 2025">
+  <meta name="keywords" content="BTS SIO, épreuves 2025, SLAM, SISR">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    /* Styles personnalisés */
+    :root {
+      --primary: #4e73df;
+      --secondary: #f6c23e;
+      --accent: #1cc88a;
+      --dark: #5a5c69;
+      --light: #f8f9fc;
+    }
+    
+    /* Navigation fixe améliorée */
+    .header {
+      z-index: 999;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+      background: rgba(255, 255, 255, 0.95) !important;
+    }
+    
+    .navmenu ul {
+      padding-top: 10px;
+    }
+    
+    .sticky-top {
+      position: sticky;
+      top: 0;
+    }
+    
+    /* Contenu principal */
+    .main-content {
+      padding-top: 80px;
+    }
+    
+    /* Timeline améliorée */
+    .timeline-container {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    .timeline {
+      position: relative;
+      margin: 50px 0;
+    }
+    
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 4px;
+      background-color: var(--primary);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -2px;
+      border-radius: 10px;
+      z-index: 1;
+    }
+    
+    .epreuve {
+      padding: 25px;
+      position: relative;
+      background-color: white;
+      width: 46%;
+      border-radius: 12px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+      margin-bottom: 50px;
+      transition: transform 0.3s ease;
+      z-index: 2;
+    }
+    
+    .epreuve:hover {
+      transform: translateY(-5px);
+    }
+    
+    .epreuve.left {
+      left: 0;
+      border-left: 4px solid var(--secondary);
+    }
+    
+    .epreuve.right {
+      left: 54%;
+      border-right: 4px solid var(--accent);
+    }
+    
+    .epreuve h2 {
+      color: var(--primary);
+      margin-top: 0;
+      font-size: 1.6rem;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 10px;
+    }
+    
+    .epreuve .date {
+      position: absolute;
+      top: -20px;
+      font-weight: bold;
+      background: white;
+      padding: 8px 20px;
+      border-radius: 30px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      font-size: 1rem;
+      z-index: 3;
+    }
+    
+    .left .date {
+      right: -30px;
+    }
+    
+    .right .date {
+      left: -30px;
+    }
+    
+    .epreuve-content {
+      margin-top: 15px;
+    }
+    
+    .epreuve-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin: 15px 0;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    
+    .details {
+      background-color: var(--light);
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 20px;
+      font-size: 0.95rem;
+      border-left: 3px solid var(--primary);
+    }
+    
+    .details h4 {
+      margin-top: 0;
+      color: var(--dark);
+      font-size: 1.1rem;
+    }
+    
+    /* Responsive */
+    @media (max-width: 992px) {
+      .timeline::after {
+        left: 31px;
+      }
+      
+      .epreuve {
+        width: 85%;
+        padding-left: 70px;
+        padding-right: 25px;
+      }
+      
+      .epreuve.right {
+        left: 0;
+      }
+      
+      .left .date, .right .date {
+        left: 15px;
+        right: auto;
+      }
+      
+      .header {
+        padding: 15px 0;
+      }
+      
+      .main-content {
+        padding-top: 70px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .epreuve {
+        width: 90%;
+        padding: 20px;
+      }
+      
+      .epreuve h2 {
+        font-size: 1.4rem;
+      }
+      
+      .details {
+        padding: 15px;
+      }
+    }
+    
+    /* En-tête de page */
+    .page-header {
+      background: linear-gradient(135deg, var(--primary), #224abe);
+      color: white;
+      padding: 100px 0 60px;
+      text-align: center;
+      margin-bottom: 40px;
+      clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    }
+    
+    .page-header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+    
+    .intro-text {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+    
+    /* Pied de page */
+    .main-footer {
+      background: var(--dark);
+      color: white;
+      padding: 40px 0 20px;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+
+<body class="resume-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <h1 class="sitename">Nawiss</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Menu</a></li>
+          <li class="dropdown"><a href="#"><span>BTS SIO</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="btssio.html">BTS SIO ? c'est quoi ?</a></li>
+              <li><a href="veille.html">Veille Technologique</a></li>
+              <li><a href="patrimoine.html">Patrimoine Informatique</a></li>
+              <li><a href="stages.html">Stages</a></li>
+              <li><a href="epreuves.html" class="active">Les Épreuves</a></li>
+            </ul>
+          </li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="projets.html">Projets</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-social-links">
+        <a href="https://www.linkedin.com/in/nawiss-makaya-37119a230/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      </div>
+
+      <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="main-content">
+      <!-- En-tête de page -->
+      <div class="page-header">
+        <div class="container">
+          <h1>Épreuves du BTS SIO 2025</h1>
+          <p class="intro-text">Calendrier complet et détails des épreuves pour le Brevet de Technicien Supérieur Services Informatiques aux Organisations</p>
+        </div>
+      </div>
+
+      <!-- Timeline des épreuves -->
+      <div class="timeline-container">
+        <div class="timeline">
+          <!-- Épreuve 1 -->
+          <div class="epreuve left">
+            <div class="date">Janvier 2025</div>
+            <h2>E4 - Projet Personnel Encadré (PPE)</h2>
+            <div class="epreuve-content">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Projet informatique" class="epreuve-image">
+              <p>Première épreuve phare du BTS SIO où vous présentez un projet informatique complet réalisé durant votre formation.</p>
+              <div class="details">
+                <h4>Détails :</h4>
+                <ul>
+                  <li>Durée : 30 min de présentation + 30 min d'entretien</li>
+                  <li>Coefficient : 4 (SLAM) / 5 (SISR)</li>
+                  <li>Modalités : Dossier technique + soutenance orale</li>
+                  <li>Compétences évaluées : Gestion de projet, développement ou administration</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Épreuve 2 -->
+          <div class="epreuve right">
+            <div class="date">Mars 2025</div>
+            <h2>E5 - Épreuve Professionnelle de Synthèse</h2>
+            <div class="epreuve-content">
+              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Travail d'équipe" class="epreuve-image">
+              <p>Épreuve transversale qui valide votre capacité à mobiliser l'ensemble des compétences acquises.</p>
+              <div class="details">
+                <h4>Détails :</h4>
+                <ul>
+                  <li>Durée : 4 heures (écrit)</li>
+                  <li>Coefficient : 3</li>
+                  <li>Modalités : Étude de cas avec propositions de solutions</li>
+                  <li>Thèmes : Cybersécurité, gestion de parc, développement d'application</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Épreuve 3 -->
+          <div class="epreuve left">
+            <div class="date">Avril 2025</div>
+            <h2>E1 - Culture Générale et Expression</h2>
+            <div class="epreuve-content">
+              <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Culture générale" class="epreuve-image">
+              <p>Épreuve commune à tous les BTS évaluant vos capacités d'analyse et d'expression écrite.</p>
+              <div class="details">
+                <h4>Détails :</h4>
+                <ul>
+                  <li>Durée : 4 heures</li>
+                  <li>Coefficient : 3</li>
+                  <li>Deux parties : Synthèse de documents + Écriture personnelle</li>
+                  <li>Thème annuel 2025 : "Dans ma maison"</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Épreuve 4 -->
+          <div class="epreuve right">
+            <div class="date">Mai 2025</div>
+            <h2>E2 - Mathématiques pour l'Informatique</h2>
+            <div class="epreuve-content">
+              <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Mathématiques" class="epreuve-image">
+              <p>Épreuve spécifique appliquant les concepts mathématiques aux problématiques informatiques.</p>
+              <div class="details">
+                <h4>Détails :</h4>
+                <ul>
+                  <li>Durée : 2 heures</li>
+                  <li>Coefficient : 2</li>
+                  <li>Calculatrices autorisées</li>
+                  <li>Thèmes : Algèbre booléenne, graphes, statistiques</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Épreuve 5 -->
+          <div class="epreuve left">
+            <div class="date">Mai 2025</div>
+            <h2>E3 - Épreuve Spécialité (SLAM ou SISR)</h2>
+            <div class="epreuve-content">
+              <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Spécialité informatique" class="epreuve-image">
+              <p>Épreuve technique spécifique à votre option (Solutions Logicielles ou Solutions Infrastructure).</p>
+              <div class="details">
+                <h4>Détails SLAM :</h4>
+                <ul>
+                  <li>Durée : 4 heures (3h pratique + 1h théorie)</li>
+                  <li>Coefficient : 4</li>
+                  <li>Développement d'application avec documentation</li>
+                </ul>
+                <h4>Détails SISR :</h4>
+                <ul>
+                  <li>Durée : 4 heures (3h pratique + 1h théorie)</li>
+                  <li>Coefficient : 4</li>
+                  <li>Résolution de problèmes réseau et système</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Épreuve 6 -->
+          <div class="epreuve right">
+            <div class="date">Juin 2025</div>
+            <h2>E6 - Langue Vivante Anglaise</h2>
+            <div class="epreuve-content">
+              <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Anglais technique" class="epreuve-image">
+              <p>Épreuve d'anglais appliqué à l'informatique et au monde professionnel.</p>
+              <div class="details">
+                <h4>Détails :</h4>
+                <ul>
+                  <li>Durée : 2 heures (1h écrit + 1h oral)</li>
+                  <li>Coefficient : 2</li>
+                  <li>Compréhension de documents techniques</li>
+                  <li>Expression sur des situations professionnelles</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Épreuve 7 -->
+          <div class="epreuve left">
+            <div class="date">Juin 2025</div>
+            <h2>E7 - Soutenance de Stage</h2>
+            <div class="epreuve-content">
+              <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Soutenance de stage" class="epreuve-image">
+              <p>Présentation et analyse de votre expérience en entreprise.</p>
+              <div class="details">
+                <h4>Détails :</h4>
+                <ul>
+                  <li>Durée : 30 min (15 min présentation + 15 min entretien)</li>
+                  <li>Coefficient : 4</li>
+                  <li>Rapport de stage de 30 à 40 pages</li>
+                  <li>Évaluation des compétences professionnelles</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer id="footer" class="footer main-footer">
+    <div class="container">
+      <div class="copyright text-center">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">Nawiss</strong> <span>All Rights Reserved</span></p>
+      </div>
+      <div class="social-links d-flex justify-content-center">
+        <a href="https://www.linkedin.com/in/nawiss-makaya-37119a230/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      </div>
+      <div class="credits text-center">
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>

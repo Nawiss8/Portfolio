@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Portfolio Nawiss Makaya</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  
+  <!-- Style pour le menu responsive -->
+  <style>
+    .mobile-nav-toggle {
+      display: none;
+    }
+    
+    @media (max-width: 1200px) {
+      .navmenu ul {
+        display: none;
+      }
+      
+      .mobile-nav-toggle {
+        display: block;
+        position: absolute;
+        right: 15px;
+        top: 20px;
+        z-index: 9998;
+        border: 0;
+        background: none;
+        font-size: 24px;
+        transition: all 0.4s;
+        outline: none !important;
+        line-height: 1;
+        cursor: pointer;
+        text-align: right;
+      }
+      
+      .navmenu-mobile {
+        position: fixed;
+        overflow: hidden;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.9);
+        transition: 0.3s;
+        z-index: 9997;
+        padding-top: 70px;
+      }
+      
+      .navmenu-mobile ul {
+        display: block !important;
+        position: absolute;
+        top: 55px;
+        right: 15px;
+        bottom: 15px;
+        left: 15px;
+        padding: 10px 0;
+        background-color: #fff;
+        overflow-y: auto;
+        transition: 0.3s;
+      }
+      
+      .navmenu-mobile li {
+        padding: 0;
+      }
+      
+      .navmenu-mobile a {
+        padding: 10px 20px;
+        font-size: 15px;
+        color: #333;
+      }
+      
+      .navmenu-mobile a:hover {
+        color: #fff;
+        background: #0078ff;
+      }
+      
+      .mobile-nav-active .mobile-nav-toggle {
+        color: #fff;
+      }
+    }
+
+    /* Nouveau CSS pour la section Projets */
+    /* [Tous les styles CSS existants pour la section projets restent inchangés] */
+    /* ... */
+    
+    /* Correction pour les liens des projets */
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 25px;
+      background: #3498db;
+      color: white;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+      cursor: pointer; /* Ajout pour indiquer que c'est cliquable */
+      position: relative;
+      z-index: 2; /* Assure que le lien est au-dessus des autres éléments */
+    }
+
+    .project-link:hover {
+      background: #2980b9;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(52, 152, 219, 0.4);
+    }
+
+    /* Assure que toute la carte est cliquable */
+    .project-card {
+      position: relative;
+    }
+
+    .project-content {
+      position: relative;
+      z-index: 2;
+    }
+  </style>
+</head>
+
+<body class="index-page">
+  <header id="header" class="header d-flex align-items-center light-background sticky-top">
+    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <h1 class="sitename">Nawiss</h1>
+      </a>
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html" class="active">Menu</a></li>
+          <li class="dropdown"><a href="#"><span>BTS SIO</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="btssio.html">BTS SIO ? c'est quoi ?</a></li>
+              <li><a href="veille.html">Veille Technologique</a></li>
+              <li><a href="patrimoine.html">Patrimoine Informatique</a></li>
+              <li><a href="epreuves.html">Les Epreuves</a></li>
+              <li><a href="#"></a></li>
+            </ul>
+          </li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="projets.html">Projets</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-social-links">
+    
+      </div>
+      <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+    </div>
+  </header>
+
+  <!-- Script pour le menu responsive -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+      const navmenu = document.querySelector('#navmenu');
+      
+      mobileNavToggle.addEventListener('click', function(e) {
+        document.body.classList.toggle('mobile-nav-active');
+        this.classList.toggle('bi-list');
+        this.classList.toggle('bi-x');
+        navmenu.classList.toggle('navmenu-mobile');
+      });
+      
+      // Fermer le menu quand on clique sur un lien
+      document.querySelectorAll('#navmenu a').forEach(navLink => {
+        navLink.addEventListener('click', () => {
+          if (document.body.classList.contains('mobile-nav-active')) {
+            document.body.classList.remove('mobile-nav-active');
+            mobileNavToggle.classList.toggle('bi-list');
+            mobileNavToggle.classList.toggle('bi-x');
+            navmenu.classList.toggle('navmenu-mobile');
+          }
+        });
+      });
+    });
+  </script>
+
+  <!-- Section Projets -->
+  <section class="projects-section">
+    <div class="projects-container">
+      <div class="section-title-projects" data-aos="fade-up">
+        <h2>Mes Projets BTS SIO</h2>
+        <p>Découvrez les projets que j'ai réalisés dans le cadre de ma formation</p>
+      </div>
+
+      <div class="projects-filters" data-aos="fade-up" data-aos-delay="100">
+        <button class="filter-btn active" data-filter="*">Tous les projets</button>
+        <button class="filter-btn" data-filter=".filter-web">Développement Web</button>
+        <button class="filter-btn" data-filter=".filter-mobile">Applications Mobiles</button>
+        <button class="filter-btn" data-filter=".filter-reseau">Réseau & Systèmes</button>
+      </div>
+
+      <div class="projects-grid" data-aos="fade-up" data-aos-delay="200">
+        <!-- Projet 1 - Site vitrine -->
+        <div class="project-card filter-web">
+          <div class="project-img-container">
+            <img src="https://www.mister-wp.com/wp-content/uploads/2020/11/Meilleur-Theme-WordPress-site-vitrine.jpg" alt="Site vitrine" class="project-img">
+            <span class="project-badge">HTML/CSS/JS</span>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Site Vitrine En Stage (Martingale et Celeste)</h3>
+            <p class="project-description">Refonte d'un site vitrine avec Wordpress et ses outils</p>
+            <div class="project-tech">
+              <span class="tech-item"><i class="bi bi-filetype-html tech-icon"></i> HTML5</span>
+              <span class="tech-item"><i class="bi bi-filetype-css tech-icon"></i> CSS3</span>
+              <span class="tech-item"><i class="bi bi-filetype-js tech-icon"></i> JavaScript</span>
+              <span class="tech-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/WordPress_blue_logo.svg" alt="WordPress" class="tech-icon" style="width: 1em; height: 1em; vertical-align: middle;">
+                WordPress
+              </span>
+              
+            </div>
+            <a href="assets/projettp/Notes de stage  1.pdf" class="project-link">Voir le TP <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Projet 2 - Application de gestion -->
+        <div class="project-card filter-web">
+          <div class="project-img-container">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Application de gestion" class="project-img">
+            <span class="project-badge">PHP/MySQL</span>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Site web pour l'epreuve finale(EN COURS...)</h3>
+            <p class="project-description">Développement d'une application web pour la fin d'année (en progression...).</p>
+            <div class="project-tech">
+              <span class="tech-item"><i class="bi bi-filetype-php tech-icon"></i> PHP</span>
+              <span class="tech-item"><i class="bi bi-database tech-icon"></i> MySQL</span>
+              <span class="tech-item"><i class="bi bi-bootstrap tech-icon"></i> Bootstrap</span>
+            </div>
+            <a href="" class="project-link">Voir le TP <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+
+
+
+
+        <div class="project-card filter-web">
+          <div class="project-img-container">
+            <img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJXdpG2C_LxtBM7g8NXKMKtSyyH1RUf0qnYg&s" alt="Application de gestion" class="project-img">
+            <span class="project-badge">HTML/CSS/JAVASCRIPT</span>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Projet Personnel Morpion</h3>
+            <p class="project-description">Développement d'un jeu de morpion.</p>
+            <div class="project-tech">
+              <span class="tech-item"><i class="bi bi-filetype-js tech-icon"></i> JavaScript</span>
+              <span class="tech-item"><i class="bi bi-filetype-html tech-icon"></i> HTML5</span>
+              <span class="tech-item"><i class="bi bi-filetype-css tech-icon"></i> CSS3</span>
+            </div>
+            <a href="assets/projettp/ProjetMorpion.pdf" class="project-link">Voir le TP <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+
+        <div class="project-card filter-web">
+          <div class="project-img-container">
+            <img src="https://static.vecteezy.com/ti/photos-gratuite/t1/33034459-parfum-bouteille-avec-epanouissement-lilas-dans-une-magnifique-violet-couleur-ai-genere-photo.jpeg" alt="Application de gestion" class="project-img">
+            <span class="project-badge">HTML/CSS/JAVASCRIPT</span>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Projet Essence Violette</h3>
+            <p class="project-description">Développement d'un jeu de morpion.</p>
+            <div class="project-tech">
+              <span class="tech-item"><i class="bi bi-filetype-js tech-icon"></i> JavaScript</span>
+              <span class="tech-item"><i class="bi bi-filetype-html tech-icon"></i> HTML5</span>
+              <span class="tech-item"><i class="bi bi-filetype-css tech-icon"></i> CSS3</span>
+            </div>
+            <a href="assets/projettp/EssenceViolette .pdf" class="project-link">Voir le TP <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Projet 3 - App mobile -->
+        <div class="project-card filter-mobile">
+          <div class="project-img-container">
+            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Application mobile" class="project-img">
+            <span class="project-badge">Kotlin</span>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Application Mobile (EN COURS...)</h3>
+            <p class="project-description">Conception d'une application Android avec bdd pour l'epreuve de FIN D'année</p>
+            <div class="project-tech">
+              <span class="tech-item"><i class="bi bi-phone tech-icon"></i> Kotlin</span>
+              <span class="tech-item"><i class="bi bi-cloud tech-icon"></i> Firebase</span>
+              <span class="tech-item"><i class="bi bi-bell tech-icon"></i> Notifications</span>
+            </div>
+            <a href="" class="project-link">Voir le TP <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Projet 4 - Réseau -->
+        <div class="project-card filter-reseau">
+          <div class="project-img-container">
+            <img src="https://www.undernews.fr/wp-content/uploads/2012/03/KeePass.jpg" alt="Réseau d'entreprise" class="project-img">
+            <span class="project-badge">Réseau</span>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Keepass</h3>
+            <p class="project-description">Keepass </p>
+            <div class="project-tech">
+              <span class="tech-item"><i class="bi bi-shield-lock tech-icon"></i> Sécurité</span>
+            </div>
+            <a href="assets/projettp/Keepass2 Nawiss.pdf" class="project-link" target="_blank">Voir le TP <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+
+         
+         <div class="project-card filter-reseau">
+          <div class="project-img-container">
+            <img src="https://www.al-informatique.fr/wp-content/uploads/2019/02/GANTT-PROJECT.jpg" alt="Réseau d'entreprise" class="project-img">
+            <span class="project-badge">Réseau</span>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Gants</h3>
+            <p class="project-description">Ordonnancement </p>
+            <div class="project-tech">
+              <span class="tech-item"><i class="bi bi-shield-lock tech-icon"></i> Sécurité</span>
+            </div>
+            <a href="assets/projettp/TD2_nawiss makaya.pdf" class="project-link" target="_blank">Voir le TP <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+
+
+             
+        <div class="project-card filter-reseau">
+          <div class="project-img-container">
+            <img src="https://kinsta.com/fr/wp-content/uploads/sites/4/2023/05/install-git.jpg" alt="Réseau d'entreprise" class="project-img">
+            <span class="project-badge">Réseau</span>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Git</h3>
+            <p class="project-description">GitHub </p>
+            <div class="project-tech">
+              <span class="tech-item"><i class="bi bi-shield-lock tech-icon"></i> Git</span>
+            </div>
+            <a href="assets/projettp/TP5_Git_Nawiss .pdf" class="project-link" target="_blank">Voir le TP <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+
+
+
+        <div class="project-card filter-reseau">
+          <div class="project-img-container">
+            <img src="https://www.globalsign.com/application/files/9716/5849/8743/Signatures_eletroniques_vs_signature_numeriques.png" alt="Réseau d'entreprise" class="project-img">
+            <span class="project-badge">Réseau</span>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Infrastructure Réseau</h3>
+            <p class="project-description">Signature numérique</p>
+            <div class="project-tech">
+              <span class="tech-item"><i class="bi bi-shield-lock tech-icon"></i> Sécurité</span>
+            </div>
+            <a href="assets/projettp/TP9_Nawiss Makaya_RSA.pdf" class="project-link" target="_blank">Voir le TP <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+
+
+
+        <div class="project-card filter-reseau">
+          <div class="project-img-container">
+            <img src="https://ubunlog.com/wp-content/uploads/2019/03/Logo-de-Wireshark.png" alt="Réseau d'entreprise" class="project-img">
+            <span class="project-badge">Réseau</span>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Travaux en equipe / Infrastructure Réseau</h3>
+            <p class="project-description">Wireshark</p>
+            <div class="project-tech">
+              <span class="tech-item"><i class="bi bi-shield-lock tech-icon"></i> Sécurité</span>
+            </div>
+            <a href="assets/projettp/TP10_Wireshark Nawiss & alkan .pdf" class="project-link" target="_blank">Voir le TP <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+
+
+
+        <div class="project-card filter-reseau">
+          <div class="project-img-container">
+            <img src="https://www.meilleure-innovation.com/wp-content/uploads/2022/02/linux.png" alt="Réseau d'entreprise" class="project-img">
+            <span class="project-badge">Réseau</span>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Linux</h3>
+            <p class="project-description">TP</p>
+            <div class="project-tech">
+              <span class="tech-item"><i class="bi bi-shield-lock tech-icon"></i> Sécurité</span>
+            </div>
+            <a href="assets/projettp/TP10 SSH Nawiss Makaya.pdf" class="project-link" target="_blank">Voir le TP <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+
+
+
+        
+        <div class="project-card filter-reseau">
+          <div class="project-img-container">
+            <img src="https://prd-cyberhub.oss-me-central-1.aliyuncs.com/uploads/ktetjCi-13QlTUNjeTWySQGxSRquwk" alt="Réseau d'entreprise" class="project-img">
+            <span class="project-badge">Réseau</span>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">John The Reaper</h3>
+            <p class="project-description">TP</p>
+            <div class="project-tech">
+              <span class="tech-item"><i class="bi bi-shield-lock tech-icon"></i>Hack</span>
+            </div>
+            <a href="assets/projettp/TP6_JTR_Nawiss Makaya.pdf" class="project-link" target="_blank">Voir le TP <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+
+
+        <div class="project-card filter-reseau">
+          <div class="project-img-container">
+            <img src="https://www.ubuntu-fr.org/img/opengraph.png" alt="Réseau d'entreprise" class="project-img">
+            <span class="project-badge">Réseau</span>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Ubuntu</h3>
+            <p class="project-description">TP</p>
+            <div class="project-tech">
+              <span class="tech-item"><i class="bi bi-shield-lock tech-icon"></i>reseau</span>
+            </div>
+            <a href="assets/projettp/Chap4.2 TP1 nawiss makaya.pdf" class="project-link" target="_blank">Voir le TP <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+       
+
+
+        
+        <div class="project-card filter-reseau">
+          <div class="project-img-container">
+            <img src="https://media.ouest-france.fr/v1/pictures/MjAyNDExZGIwZWQ3MjU2ZDk3ZDc1ZDdjNzJmMjI0YmQ3ODI1NzQ?width=1260&height=708&focuspoint=50%2C25&cropresize=1&client_id=bpeditorial&sign=e61376d6a0d20c8064a013f39d841129ec2a2ecc293292c76fd16cf2b642c3ec" alt="Réseau d'entreprise" class="project-img">
+            <span class="project-badge">Réseau</span>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Packet Tracer - VPN</h3>
+            <p class="project-description">TP</p>
+            <div class="project-tech">
+              <span class="tech-item"><i class="bi bi-shield-lock tech-icon"></i>reseau</span>
+            </div>
+            <a href="assets/projettp/TP7_Vpn_Nawiss Makaya.pdf" class="project-link" target="_blank">Voir le TP <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+  </section>
+
+  <footer id="footer" class="footer light-background">
+    <div class="container">
+      <div class="copyright text-center ">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">nawiss</strong> <span>All Rights Reserved<br></span></p>
+      </div>
+      <div class="social-links d-flex justify-content-center">
+        <a href="https://www.linkedin.com/in/nawiss-makaya-37119a230/"><i class="bi bi-linkedin"></i></a>
+      </div>
+      <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a href="https://themewagon.com">ThemeWagon</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Script pour le filtrage des projets -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Filtrage des projets
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const projectCards = document.querySelectorAll('.project-card');
+
+      filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          // Active le bouton cliqué
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
+
+          // Filtre les projets
+          const filterValue = button.getAttribute('data-filter');
+          
+          projectCards.forEach(card => {
+            if (filterValue === '*' || card.classList.contains(filterValue.replace('.', ''))) {
+              card.style.display = 'block';
+              card.style.animation = 'fadeInUp 0.6s ease-out';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // Correction pour les liens - s'assurer qu'ils sont cliquables
+      document.querySelectorAll('.project-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+          // Empêche la propagation de l'événement si nécessaire
+          e.stopPropagation();
+        });
+      });
+    });
+  </script>
+
+<style>
+  /* Animations personnalisées */
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+
+  @keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* Style global pour la section Projets */
+  .projects-section {
+    background: linear-gradient(-45deg, #f5f7fa, #e4e8eb, #f5f7fa);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .projects-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(52, 152, 219, 0.03)" d="M0,0 L100,0 L100,100 Q50,80 0,100 L0,0 Z"></path></svg>') no-repeat;
+    background-size: cover;
+    z-index: 0;
+  }
+
+  .projects-container {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .section-title-projects {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .section-title-projects h2 {
+    font-size: 2.8rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+  }
+
+  .section-title-projects h2::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: #3498db;
+    border-radius: 2px;
+  }
+
+  .section-title-projects p {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* Filtres */
+  .projects-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 40px;
+  }
+
+  .filter-btn {
+    padding: 10px 25px;
+    background: white;
+    border: 2px solid #3498db;
+    color: #3498db;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  }
+
+  .filter-btn:hover, .filter-btn.active {
+    background: #3498db;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.3);
+  }
+
+  /* Grille de projets */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+  }
+
+  /* Carte de projet */
+  .project-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    animation: fadeInUp 0.8s ease-out;
+    animation-fill-mode: backwards;
+  }
+
+  .project-card:nth-child(1) { animation-delay: 0.1s; }
+  .project-card:nth-child(2) { animation-delay: 0.2s; }
+  .project-card:nth-child(3) { animation-delay: 0.3s; }
+  .project-card:nth-child(4) { animation-delay: 0.4s; }
+  .project-card:nth-child(5) { animation-delay: 0.5s; }
+  .project-card:nth-child(6) { animation-delay: 0.6s; }
+
+  .project-card:hover {
+    transform: translateY(-10px) rotate(1deg);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  }
+
+  .project-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.1) 0%, rgba(44, 62, 80, 0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .project-card:hover::before {
+    opacity: 1;
+  }
+
+  .project-img-container {
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .project-card:hover .project-img {
+    transform: scale(1.1);
+  }
+
+  .project-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #e74c3c;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3);
+    z-index: 1;
+  }
+
+  .project-content {
+    padding: 25px;
+  }
+
+  .project-title {
+    font-size: 1.4rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+
+  .project-description {
+    color: #7f8c8d;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .tech-item {
+    background: rgba(52, 152, 219, 0.1);
+    color: #3498db;
+    padding: 5px 12px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .tech-icon {
+    font-size: 0.9rem;
+  }
+
+  .project-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 25px;
+    background: #3498db;
+    color: white;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+  }
+
+  .project-link:hover {
+    background: #2980b9;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.4);
+  }
+
+  .project-link i {
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+  }
+
+  .project-link:hover i {
+    transform: translateX(5px);
+  }
+
+  /* Effet spécial au survol */
+  .project-card:hover .project-title {
+    color: #3498db;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .section-title-projects h2 {
+      font-size: 2.2rem;
+    }
+    
+    .project-content {
+      padding: 20px;
+    }
+  }
+
+  /* Animation d'entrée */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+</body>
+</html>
