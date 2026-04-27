@@ -29,6 +29,13 @@
   
   <!-- Style pour le menu responsive -->
   <style>
+    /* AJOUTÉ : Style pour le lien actif avec soulignement */
+    .navmenu ul li a.active {
+      color: #e74c3c !important;
+      border-bottom: 3px solid #e74c3c !important;
+      padding-bottom: 5px !important;
+    }
+
     .mobile-nav-toggle {
       display: none;
     }
@@ -100,73 +107,6 @@
       }
     }
   </style>
-</head>
-
-<body class="index-page">
-  <header id="header" class="header d-flex align-items-center light-background sticky-top">
-    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <h1 class="sitename">Nawiss</h1>
-      </a>
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="index.html" class="active">Menu</a></li>
-          <li class="dropdown"><a href="#"><span>BTS SIO</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="btssio.html">BTS SIO ? c'est quoi ?</a></li>
-              <li><a href="veille.html">Veille Technologique</a></li>
-              <li><a href="patrimoine.html">Patrimoine Informatique</a></li>
-              <li><a href="epreuves.html">Les Epreuves</a></li>
-              <li><a href="#"></a></li>
-            </ul>
-          </li>
-          <li><a href="profile.html">Profile</a></li>
-          <li><a href="projets.html">Projets</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-      <div class="header-social-links">
-    
-      </div>
-      <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-    </div>
-  </header>
-
-  <!-- Script pour le menu responsive -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
-      const navmenu = document.querySelector('#navmenu');
-      
-      mobileNavToggle.addEventListener('click', function(e) {
-        document.body.classList.toggle('mobile-nav-active');
-        this.classList.toggle('bi-list');
-        this.classList.toggle('bi-x');
-        navmenu.classList.toggle('navmenu-mobile');
-      });
-      
-      // Fermer le menu quand on clique sur un lien
-      document.querySelectorAll('#navmenu a').forEach(navLink => {
-        navLink.addEventListener('click', () => {
-          if (document.body.classList.contains('mobile-nav-active')) {
-            document.body.classList.remove('mobile-nav-active');
-            mobileNavToggle.classList.toggle('bi-list');
-            mobileNavToggle.classList.toggle('bi-x');
-            navmenu.classList.toggle('navmenu-mobile');
-          }
-        });
-      });
-    });
-  </script>
-</body>
-</html>
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <!-- [Tout le contenu existant du head reste inchangé] -->
-  <!-- ... -->
 
   <!-- Nouveau CSS pour la section Hero -->
   <style>
@@ -204,7 +144,7 @@
       font-weight: 700;
       color: white;
       margin-bottom: 20px;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8), 0 4px 8px rgba(0, 0, 0, 0.6); /* Ombre noire renforcée */
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8), 0 4px 8px rgba(0, 0, 0, 0.6);
       animation: textGlow 2s ease-in-out infinite alternate;
     }
 
@@ -212,7 +152,7 @@
       font-size: 1.5rem;
       color: white;
       margin-bottom: 40px;
-      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8), 0 3px 5px rgba(0, 0, 0, 0.6); /* Ombre noire renforcée */
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8), 0 3px 5px rgba(0, 0, 0, 0.6);
     }
 
     .hero-buttons {
@@ -242,7 +182,7 @@
       background: #e74c3c;
       color: white;
       box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
-      border: none; /* Suppression de la bordure */
+      border: none;
     }
 
     .btn-get-started:hover,
@@ -252,8 +192,6 @@
       box-shadow: 0 10px 25px rgba(231, 76, 60, 0.6);
     }
 
-    
-    /* Animation du texte */
     @keyframes textGlow {
       from {
         text-shadow: 0 0 10px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.6);
@@ -263,17 +201,11 @@
       }
     }
 
-    /* Animation de la vague */
     @keyframes waveAnimation {
-      0% {
-        background-position-x: 0;
-      }
-      100% {
-        background-position-x: 1200px;
-      }
+      0% { background-position-x: 0; }
+      100% { background-position-x: 1200px; }
     }
 
-    /* Particules animées */
     .particles {
       position: absolute;
       top: 0;
@@ -302,113 +234,23 @@
       }
     }
 
-    /* Responsive */
     @media (max-width: 768px) {
-      .hero h2 {
-        font-size: 2.5rem;
-      }
-
-      .hero p {
-        font-size: 1.2rem;
-      }
-
+      .hero h2 { font-size: 2.5rem; }
+      .hero p { font-size: 1.2rem; }
       .hero-buttons {
         flex-direction: column;
         align-items: center;
         gap: 15px;
       }
-
-      .btn-get-started,
-      .btn-synthesis {
+      .btn-get-started, .btn-synthesis {
         width: 100%;
         max-width: 250px;
       }
     }
   </style>
-</head>
-
-<body class="index-page">
-  <!-- [Tout le contenu existant jusqu'à la section Hero reste inchangé] -->
-  <!-- ... -->
-
-  <!-- Section Hero améliorée -->
-  <main class="main">
-    <!-- Hero Section -->
-    <section id="hero" class="hero section">
-      <!-- Effet de particules -->
-      
-      
-      <img src="assets/img/hero-bg.png" alt="" data-aos="fade-in">
-      <div class="container text-center" data-aos="zoom-out" data-aos-delay="100">
-        <div class="row justify-content-center">
-          <div class="col-lg-8">
-            <h2>Bienvenue sur mon Portfolio</h2>
-            <p>Développeur Web Passionné</p>
-            <div class="hero-buttons">
-              <a href="assets/cv/cv nawiss 2025.pdf" download class="btn-get-started">
-                <i class="bi bi-download"></i> Mon CV
-              </a>
-              <a href="assets/tds/Tableau Competences Nawiss .pdf" target="_blank" class="btn-synthesis">
-                <i class="bi bi-table"></i> Tableau de Synthèse
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section><!-- /Hero Section -->
-  </main>
-
-  <!-- [Tout le reste de votre code reste inchangé] -->
-  <!-- ... -->
-
-  <!-- Script pour les particules -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const particlesContainer = document.getElementById('particles');
-      const particleCount = 30;
-      
-      for (let i = 0; i < particleCount; i++) {
-        const particle = document.createElement('div');
-        particle.classList.add('particle');
-        
-        // Position aléatoire
-        const posX = Math.random() * 100;
-        const posY = Math.random() * 100 + 100;
-        
-        // Taille aléatoire
-        const size = Math.random() * 5 + 2;
-        
-        // Durée d'animation aléatoire
-        const duration = Math.random() * 15 + 10;
-        const delay = Math.random() * -20;
-        
-        particle.style.left = `${posX}%`;
-        particle.style.top = `${posY}%`;
-        particle.style.width = `${size}px`;
-        particle.style.height = `${size}px`;
-        particle.style.animationDuration = `${duration}s`;
-        particle.style.animationDelay = `${delay}s`;
-        
-        particlesContainer.appendChild(particle);
-      }
-    });
-  </script>
-</body>
-</html><br><br><br>
-
-<!-- Skills Section -->
-
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <!-- [Tout le contenu existant du head reste inchangé] -->
-  <!-- ... -->
 
   <!-- Nouveau CSS pour la section Compétences -->
   <style>
-    /* Style global pour la section Compétences */
     .skills-section {
       padding: 60px 0;
       background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
@@ -420,7 +262,6 @@
       padding: 0 20px;
     }
 
-    /* Grille de compétences responsive */
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -429,14 +270,12 @@
       padding: 20px;
     }
 
-    /* Carte de compétence */
     .skill-card {
       width: 100%;
       max-width: 150px;
       height: 150px;
       background-size: cover;
       background-position: center;
-      background-image: var(--img);
       display: flex;
       align-items: flex-end;
       justify-content: center;
@@ -485,12 +324,10 @@
       font-size: 1.1rem;
     }
 
-    /* Effet de zoom au survol */
     .skill-card:hover {
       background-size: 110%;
     }
 
-    /* Animation subtile */
     @keyframes float {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-5px); }
@@ -507,18 +344,15 @@
     .skill-card:nth-child(6) { animation-delay: 1s; }
     .skill-card:nth-child(7) { animation-delay: 1.2s; }
 
-    /* Responsive */
     @media (max-width: 768px) {
       .skills-grid {
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
         gap: 15px;
       }
-
       .skill-card {
         height: 120px;
         max-width: 120px;
       }
-
       .skill-name {
         font-size: 0.9rem;
         margin-bottom: 10px;
@@ -531,98 +365,9 @@
       }
     }
   </style>
-</head>
-
-<body class="index-page">
-  <!-- [Tout le contenu existant jusqu'à la section Compétences reste inchangé] -->
-  <!-- ... -->
-
-  <!-- Section Compétences -->
-  <section class="skills-section">
-    <div class="container section-title" data-aos="fade-up">
-      <h2>Compétences</h2>
-      <p>Mes principales compétences techniques</p>
-    </div>
-
-    <div class="skills-container">
-      <div class="skills-grid">
-        <!-- Compétence CSS -->
-        <div class="skill-card" style="--img: url(https://i0.wp.com/css-tricks.com/wp-content/uploads/2024/10/css3-logo.jpg?resize=1200%2C600&ssl=1);">
-          <span class="skill-name">CSS</span>
-        </div>
-
-        <!-- Compétence HTML -->
-        <div class="skill-card" style="--img: url(https://img.freepik.com/vecteurs-premium/code-script-fichier-isometrique-vecteur-signe-html_744112-547.jpg?semt=ais_hybrid);">
-          <span class="skill-name">HTML</span>
-        </div>
-
-        <!-- Compétence Kotlin -->
-        <div class="skill-card" style="--img: url(https://storage.yandexcloud.net/plp-media-97af8aaaa1/CACHE/images/cover/fbc29d40e4b4e5d1ed240041eaba1e86fd3242a1/a96253e8b727dcfc29fe8ca36ab88c8a.png);">
-          <span class="skill-name">Kotlin</span>
-        </div>
-
-        <!-- Compétence PHP -->
-        <div class="skill-card" style="--img: url(https://img.freepik.com/premium-vector/isometric-file-script-code-with-php-sign-vector_744112-549.jpg);">
-          <span class="skill-name">PHP</span>
-        </div>
-
-        <!-- Compétence JavaScript -->
-        <div class="skill-card" style="--img: url(https://img.freepik.com/premium-vector/isometric-file-script-code-with-js-sign-vector_744112-548.jpg?w=360);">
-          <span class="skill-name">JavaScript</span>
-        </div>
-
-        <!-- Compétence Laravel -->
-        <div class="skill-card" style="--img: url(https://www.pinchaaqui.es/app/uploads/2024/10/Laravel-scaled.jpeg);">
-          <span class="skill-name">Laravel</span>
-        </div>
-
-        <!-- Compétence XML -->
-        <div class="skill-card" style="--img: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0M2M_ZjnoVjBkiarzB2HzJG7fKND6DtSMDXgn4Cc1NBBak1Dj_G89xRmlQ2w8xbbF758&usqp=CAU);">
-          <span class="skill-name">XML</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- [Tout le reste de votre code reste inchangé] -->
-  <!-- ... -->
-
-  <!-- Scripts existants -->
-  <!-- ... -->
-</body>
-</html>
-
-
-
-
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
-  <div id="preloader"></div>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/js/main.js"></script>
-
-
-
-
-
-
-  <!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <!-- [Tout le contenu existant du head reste inchangé] -->
-  <!-- ... -->
 
   <!-- Nouveau CSS pour la section Parcours -->
   <style>
-    /* Style global pour la section Parcours */
     .resume-section {
       padding: 80px 0;
       background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
@@ -652,7 +397,6 @@
       z-index: 0;
     }
 
-    /* Timeline stylisée */
     .resume-container {
       position: relative;
       z-index: 1;
@@ -695,7 +439,6 @@
       border-radius: 3px;
     }
 
-    /* Items de parcours */
     .resume-item {
       background: white;
       border-radius: 15px;
@@ -786,7 +529,6 @@
       transform: translateX(5px);
     }
 
-    /* Points de timeline */
     .resume-item::after {
       content: '';
       position: absolute;
@@ -815,7 +557,6 @@
       box-shadow: 0 0 0 3px #e74c3c;
     }
 
-    /* Animation automatique */
     @keyframes floatItem {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-10px); }
@@ -829,16 +570,13 @@
     .resume-item:nth-child(2) { animation-delay: 1s; }
     .resume-item:nth-child(3) { animation-delay: 2s; }
 
-    /* Responsive */
     @media (max-width: 992px) {
       .resume-row::before {
         left: 30px;
       }
-
       .col-lg-6 {
         padding-left: 50px;
       }
-
       .col-lg-6:nth-child(1) .resume-item::after,
       .col-lg-6:nth-child(2) .resume-item::after {
         left: -10px;
@@ -850,11 +588,9 @@
       .resume-section {
         padding: 60px 0;
       }
-
       .resume-item {
         padding: 20px;
       }
-
       .resume-title {
         font-size: 1.5rem;
       }
@@ -863,63 +599,188 @@
 </head>
 
 <body class="index-page">
-  <!-- [Tout le contenu existant jusqu'à la section Parcours reste inchangé] -->
-  <!-- ... -->
-
-  <!-- Section Parcours améliorée -->
-  <section id="resume" class="resume section resume-section">
-    <div class="container section-title" data-aos="fade-up">
-      <h2>Parcours</h2>
-      <p>Découvrez mon parcours professionnel et académique</p>
+  <header id="header" class="header d-flex align-items-center light-background sticky-top">
+    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <h1 class="sitename">Nawiss</h1>
+      </a>
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <!-- CORRECTION : j'ai enlevé le class="active" ici -->
+          <li><a href="index.html">Menu</a></li>
+          <li class="dropdown"><a href="#"><span>BTS SIO</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="btssio.html">BTS SIO ? c'est quoi ?</a></li>
+              <li><a href="veille.html">Veille Technologique</a></li>
+              <li><a href="patrimoine.html">Patrimoine Informatique</a></li>
+              <li><a href="epreuves.html">Les Epreuves</a></li>
+              <li><a href="#"></a></li>
+            </ul>
+          </li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="projets.html">Projets</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-social-links">
+    
+      </div>
+      <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
     </div>
+  </header>
 
-    <div class="container resume-container">
-      <div class="row resume-row">
-        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-          <h3 class="resume-title">BTS SIO</h3>
+  <!-- Script pour le menu responsive -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+      const navmenu = document.querySelector('#navmenu');
+      
+      if (mobileNavToggle) {
+        mobileNavToggle.addEventListener('click', function(e) {
+          document.body.classList.toggle('mobile-nav-active');
+          this.classList.toggle('bi-list');
+          this.classList.toggle('bi-x');
+          navmenu.classList.toggle('navmenu-mobile');
+        });
+      }
+      
+      // Fermer le menu quand on clique sur un lien
+      document.querySelectorAll('#navmenu a').forEach(navLink => {
+        navLink.addEventListener('click', () => {
+          if (document.body.classList.contains('mobile-nav-active')) {
+            document.body.classList.remove('mobile-nav-active');
+            if (mobileNavToggle) {
+              mobileNavToggle.classList.toggle('bi-list');
+              mobileNavToggle.classList.toggle('bi-x');
+            }
+            navmenu.classList.toggle('navmenu-mobile');
+          }
+        });
+      });
 
-          <div class="resume-item pb-0">
-            <h4>2023 - 2026</h4>
-            <h5>Formation en informatique : BTS SIO</h5>
-            <p><em>Campus CSND, Villefranche-sur-Saône, </em></p>
-            <ul>
-              <li>Option SLAM (Solutions Logicielles et Applications Métiers)</li>
-              
-              <li>Cursus de 2 ans avec stages en entreprise</li>
-              <li>Développement d'applications et gestion de parc informatique</li>
-            </ul>
-          </div>
-        </div>
+      // Gestion du menu actif (soulignement)
+      const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+      const navLinks = document.querySelectorAll('#navmenu ul li a');
+      
+      navLinks.forEach(link => {
+        const linkPage = link.getAttribute('href');
+        if (linkPage === currentPage || (currentPage === 'index.html' && linkPage === 'index.html')) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
 
-        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-          <h3 class="resume-title">Bac Technologique</h3>
-          <div class="resume-item">
-            <h4>2021 - 2019</h4>
-            
-            <p><em>Lycée Colbert, Lyon 8</em></p>
-            <ul>
-              <li>Baccalauréat STMG (Sciences et Technologies du Management et de la Gestion)</li>
-              <li>Spécialité Systèmes d'Information de Gestion</li>
-              <li>Programmation HTML/CSS</li>
-              <li>Projets de gestion en équipe</li>
-            </ul>
+  <!-- Section Hero améliorée -->
+  <main class="main">
+    <!-- Hero Section -->
+    <section id="hero" class="hero section">
+      <img src="assets/img/hero-bg.png" alt="" data-aos="fade-in">
+      <div class="container text-center" data-aos="zoom-out" data-aos-delay="100">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <h2>Bienvenue sur mon Portfolio</h2>
+            <p>Développeur Web Passionné</p>
+            <div class="hero-buttons">
+              <a href="assets/cv/cv nawiss 2025.pdf" download class="btn-get-started">
+                <i class="bi bi-download"></i> Mon CV
+              </a>
+              <a href="assets/tds/Tableau Competences Nawiss .pdf" target="_blank" class="btn-synthesis">
+                <i class="bi bi-table"></i> Tableau de Synthèse
+              </a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section><!-- /Hero Section -->
 
-  <!-- [Tout le reste de votre code reste inchangé] -->
-  <!-- ... -->
+    <!-- Section Compétences -->
+    <section class="skills-section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Compétences</h2>
+        <p>Mes principales compétences techniques</p>
+      </div>
 
-  <!-- Scripts existants -->
-  <!-- ... -->
-</body>
-</html>
-</body>
+      <div class="skills-container">
+        <div class="skills-grid">
+          <div class="skill-card" style="background-image: url(https://i0.wp.com/css-tricks.com/wp-content/uploads/2024/10/css3-logo.jpg?resize=1200%2C600&ssl=1);">
+            <span class="skill-name">CSS</span>
+          </div>
+          <div class="skill-card" style="background-image: url(https://img.freepik.com/vecteurs-premium/code-script-fichier-isometrique-vecteur-signe-html_744112-547.jpg?semt=ais_hybrid);">
+            <span class="skill-name">HTML</span>
+          </div>
+          <div class="skill-card" style="background-image: url(https://storage.yandexcloud.net/plp-media-97af8aaaa1/CACHE/images/cover/fbc29d40e4b4e5d1ed240041eaba1e86fd3242a1/a96253e8b727dcfc29fe8ca36ab88c8a.png);">
+            <span class="skill-name">Kotlin</span>
+          </div>
+          <div class="skill-card" style="background-image: url(https://img.freepik.com/premium-vector/isometric-file-script-code-with-php-sign-vector_744112-549.jpg);">
+            <span class="skill-name">PHP</span>
+          </div>
+          <div class="skill-card" style="background-image: url(https://img.freepik.com/premium-vector/isometric-file-script-code-with-js-sign-vector_744112-548.jpg?w=360);">
+            <span class="skill-name">JavaScript</span>
+          </div>
+          <div class="skill-card" style="background-image: url(https://www.pinchaaqui.es/app/uploads/2024/10/Laravel-scaled.jpeg);">
+            <span class="skill-name">Laravel</span>
+          </div>
+          <div class="skill-card" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0M2M_ZjnoVjBkiarzB2HzJG7fKND6DtSMDXgn4Cc1NBBak1Dj_G89xRmlQ2w8xbbF758&usqp=CAU);">
+            <span class="skill-name">XML</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- Section Parcours améliorée -->
+    <section id="resume" class="resume section resume-section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Parcours</h2>
+        <p>Découvrez mon parcours professionnel et académique</p>
+      </div>
 
+      <div class="container resume-container">
+        <div class="row resume-row">
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="resume-title">BTS SIO</h3>
+            <div class="resume-item pb-0">
+              <h4>2023 - 2026</h4>
+              <h5>Formation en informatique : BTS SIO</h5>
+              <p><em>Campus CSND, Villefranche-sur-Saône, </em></p>
+              <ul>
+                <li>Option SLAM (Solutions Logicielles et Applications Métiers)</li>
+                <li>Cursus de 2 ans avec stages en entreprise</li>
+                <li>Développement d'applications et gestion de parc informatique</li>
+              </ul>
+            </div>
+          </div>
 
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="resume-title">Bac Technologique</h3>
+            <div class="resume-item">
+              <h4>2021 - 2019</h4>
+              <p><em>Lycée Colbert, Lyon 8</em></p>
+              <ul>
+                <li>Baccalauréat STMG (Sciences et Technologies du Management et de la Gestion)</li>
+                <li>Spécialité Systèmes d'Information de Gestion</li>
+                <li>Programmation HTML/CSS</li>
+                <li>Projets de gestion en équipe</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/js/main.js"></script>
 
   <!-- footer -->
   <footer id="footer" class="footer light-background">
@@ -928,13 +789,35 @@
         <p>© <span>Copyright</span> <strong class="px-1 sitename">Nawiss</strong> <span>All Rights Reserved<br></span></p>
       </div>
       <div class="social-links d-flex justify-content-center">
-       
         <a href="https://www.linkedin.com/in/nawiss-makaya-37119a230/"><i class="bi bi-linkedin"></i></a>
       </div>
     </div>
   </footer>
-  
- 
 
-
+  <!-- Script pour les particules -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const particlesContainer = document.getElementById('particles');
+      if (particlesContainer) {
+        const particleCount = 30;
+        for (let i = 0; i < particleCount; i++) {
+          const particle = document.createElement('div');
+          particle.classList.add('particle');
+          const posX = Math.random() * 100;
+          const posY = Math.random() * 100 + 100;
+          const size = Math.random() * 5 + 2;
+          const duration = Math.random() * 15 + 10;
+          const delay = Math.random() * -20;
+          particle.style.left = `${posX}%`;
+          particle.style.top = `${posY}%`;
+          particle.style.width = `${size}px`;
+          particle.style.height = `${size}px`;
+          particle.style.animationDuration = `${duration}s`;
+          particle.style.animationDelay = `${delay}s`;
+          particlesContainer.appendChild(particle);
+        }
+      }
+    });
+  </script>
+</body>
 </html>
